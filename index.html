@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- LEFT: FORM -->
+    <div class="form-section">
+      <h1>CV Generator</h1>
+      <p>Details fill karo, fir "Generate CV" dabao, phir Print/PDF le lo.</p>
+
+      <!-- Personal Info -->
+      <h2>Personal Info</h2>
+
+      <div class="field">
+        <label>Full Name</label>
+        <input type="text" id="fullName" placeholder="Your full name">
+      </div>
+
+      <div class="field">
+        <label>Job Title</label>
+        <input type="text" id="jobTitle" placeholder="e.g. Web Developer">
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="your@email.com">
+      </div>
+
+      <div class="field">
+        <label>Phone</label>
+        <input type="text" id="phone" placeholder="+91-XXXXXXXXXX">
+      </div>
+
+      <div class="field">
+        <label>Address</label>
+        <input type="text" id="address" placeholder="City, Country">
+      </div>
+
+      <!-- Photo Upload -->
+      <h2>Profile Photo</h2>
+      <div class="field">
+        <label>Upload Photo</label>
+        <input type="file" id="photoInput" accept="image/*">
+      </div>
+
+      <!-- Background Image Upload -->
+      <h2>Background Image</h2>
+      <div class="field">
+        <label>Upload Background (optional)</label>
+        <input type="file" id="bgInput" accept="image/*">
+        <small>Default: white background. Image select karoge to CV background change ho jayega.</small>
+      </div>
+
+      <!-- Summary -->
+      <h2>Summary / Objective</h2>
+      <div class="field">
+        <label>Short Summary</label>
+        <textarea id="summary" rows="3" placeholder="Write a short summary about yourself..."></textarea>
+      </div>
+
+      <!-- Education (Multiple) -->
+      <h2>Education</h2>
+      <div id="educationContainer"></div>
+      <button type="button" id="addEducationBtn">+ Add Education</button>
+
+      <!-- Experience -->
+      <h2>Experience</h2>
+      <div class="field">
+        <label>Work Experience</label>
+        <textarea id="experience" rows="4"
+          placeholder="Company, Role, Duration, Responsibilities..."></textarea>
+      </div>
+
+      <!-- Skills -->
+      <h2>Skills</h2>
+      <div class="field">
+        <label>Skills (comma separated)</label>
+        <input type="text" id="skills" placeholder="HTML, CSS, JavaScript, ...">
+      </div>
+
+      <!-- Projects -->
+      <h2>Projects</h2>
+      <div class="field">
+        <label>Projects</label>
+        <textarea id="projects" rows="3"
+          placeholder="Project name - short description..."></textarea>
+      </div>
+
+      <button type="button" id="generateBtn">Generate CV</button>
+      <button type="button" id="printBtn">Print / Download PDF</button>
+    </div>
+
+    <!-- RIGHT: CV PREVIEW -->
+    <div class="cv-section" id="cvSection">
+      <div class="cv-inner" id="cvInner">
+
+        <div class="cv-top">
+          <div class="cv-photo-wrapper">
+            <img id="cvPhoto" src="" alt="Profile Photo" style="display:none;">
+          </div>
+          <div class="cv-header">
+            <h1 id="cvName">Your Name</h1>
+            <p id="cvJobTitle">Your Job Title</p>
+
+            <div class="cv-contact">
+              <span id="cvEmail">email@example.com</span> |
+              <span id="cvPhone">+91-XXXXXXXXXX</span> |
+              <span id="cvAddress">City, Country</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-body">
+          <div class="cv-block">
+            <h2>Profile</h2>
+            <p id="cvSummary">Short summary will appear here...</p>
+          </div>
+
+          <div class="cv-block">
+            <h2>Education</h2>
+            <div id="cvEducationList">
+              <p>Education details will appear here...</p>
+            </div>
+          </div>
+
+          <div class="cv-block">
+            <h2>Experience</h2>
+            <p id="cvExperience">Work experience will appear here...</p>
+          </div>
+
+          <div class="cv-block">
+            <h2>Skills</h2>
+            <ul id="cvSkills">
+              <li>Add your skills...</li>
+            </ul>
+          </div>
+
+          <div class="cv-block">
+            <h2>Projects</h2>
+            <p id="cvProjects">Projects will appear here...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
