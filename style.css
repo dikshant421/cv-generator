@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+  padding: 20px;
+  color: #000; /* text always black */
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* LEFT: FORM */
+.form-section {
+  background: #ffffff;
+  padding: 16px 18px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 40%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.form-section h1 {
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+
+.form-section p {
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #555;
+}
+
+.form-section h2 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #333;
+}
+
+.field {
+  margin-bottom: 8px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 3px;
+  color: #444;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #6366f1;
+}
+
+.field small {
+  font-size: 11px;
+  color: #777;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  margin-right: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#generateBtn {
+  background: #6366f1;
+  color: #fff;
+}
+
+#printBtn {
+  background: #10b981;
+  color: #fff;
+}
+
+#addEducationBtn {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* Education item style (form side) */
+.education-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 6px;
+  margin-bottom: 6px;
+}
+
+.education-item .field {
+  margin-bottom: 4px;
+}
+
+/* RIGHT: CV */
+.cv-section {
+  background: #ffffff;
+  padding: 0;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+/* actual CV area (where background image apply hoga) */
+.cv-inner {
+  padding: 18px 20px;
+  min-height: 80vh;
+  background-color: #ffffff; /* default white */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000; /* ensure text black */
+}
+
+/* Top part: photo + name */
+.cv-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cv-photo-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #111827;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.cv-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cv-header {
+  flex: 1;
+}
+
+.cv-header h1 {
+  font-size: 26px;
+  margin-bottom: 2px;
+}
+
+.cv-header p {
+  font-size: 14px;
+  color: #111;
+}
+
+.cv-contact {
+  font-size: 12px;
+  color: #111;
+  margin-top: 4px;
+}
+
+.cv-contact span {
+  margin-right: 5px;
+}
+
+.cv-body {
+  font-size: 13px;
+  color: #000;
+  margin-top: 8px;
+}
+
+.cv-block {
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.8); /* halka white panel for readability */
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.cv-block h2 {
+  font-size: 14px;
+  color: #111827;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cv-block p {
+  white-space: pre-line;
+}
+
+#cvSkills {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+/* Print styling: sirf CV print ho */
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+  .form-section {
+    display: none;
+  }
+  .cv-section {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .cv-inner {
+    min-height: 100vh;
+  }
+}
